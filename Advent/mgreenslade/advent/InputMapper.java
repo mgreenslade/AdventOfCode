@@ -7,8 +7,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.common.base.Strings;
-
 public class InputMapper
 {
 	private static Pattern groupNamePattern = Pattern.compile("\\(\\?<(\\w+)>.*?\\)");
@@ -63,7 +61,7 @@ public class InputMapper
 	
 	private String nvl(String group)
 	{
-		return Strings.nullToEmpty(group);
+		return group == null ? "" : group;
 	}
 	
 	public void setInputPattern(Pattern inputPattern)

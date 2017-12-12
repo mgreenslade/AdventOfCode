@@ -9,8 +9,10 @@ public class ChallengeRunner
 		runChallenge(new Day1());
 	}
 	
-	static void runChallenge(AdventChallenge challenge) {
-		System.out.println(challenge.solveFirstPuzzle());
-		System.out.println(challenge.solveSecondPuzzle());
+	static void runChallenge(AdventChallenge challenge)
+	{
+		System.out.println(challenge.getName() + " Part 1: " + challenge.solveFirstPuzzle());
+		System.out.println(challenge.getName() + " Part 2: " + challenge.solveSecondPuzzle());
+		
 	}
 }

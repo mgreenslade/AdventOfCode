@@ -7,11 +7,14 @@ import java.util.stream.Stream;
 
 public abstract class AdventChallenge
 {
-	public static final String DEFAULT_DIRECTORY = "";
+	public static final String ROOT = "mgreenslade";
+	public static final String RESOURCES = "resources";
 	public final String fileName;
+	public final String name;
 	
-	public AdventChallenge(String fileName)
+	public AdventChallenge(String name, String fileName)
 	{
+		this.name = name;
 		this.fileName = fileName;
 	}
 	
@@ -23,12 +26,17 @@ public abstract class AdventChallenge
 	{
 		try
 		{
-			return Files.lines(Paths.get(DEFAULT_DIRECTORY, fileName));
+			return Files.lines(Paths.get(ROOT, RESOURCES, fileName));
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	public String getName()
+	{
+		return name;
 	}
 }

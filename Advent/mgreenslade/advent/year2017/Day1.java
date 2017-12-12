@@ -7,7 +7,7 @@ public class Day1 extends AdventChallenge
 	
 	public Day1()
 	{
-		super("day1.txt");
+		super("Day 1", "day1.txt");
 	}
 	
 	/**
