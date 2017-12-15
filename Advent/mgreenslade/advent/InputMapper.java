@@ -13,7 +13,7 @@ public class InputMapper
 	
 	private Pattern inputPattern;
 	private List<String> groupNames = new ArrayList<>();
-	private final List<String> capturedGroups = new ArrayList<>();
+	private final Map<Integer, String> capturedGroups = new HashMap<>();
 	private final Map<String, String> capturedNamedGroups = new HashMap<>();
 	
 	public InputMapper(Pattern inputPattern)
@@ -49,7 +49,7 @@ public class InputMapper
 		int numGroups = parsedInput.groupCount();
 		for (int i = 1; i <= numGroups; i++)
 		{
-			capturedGroups.add(parsedInput.group(i));
+			capturedGroups.put(i - 1, parsedInput.group(i));
 		}
 		
 		for (String name : groupNames)
@@ -76,7 +76,7 @@ public class InputMapper
 		return capturedNamedGroups;
 	}
 	
-	public List<String> getGroupsByPosition()
+	public Map<Integer, String> getGroupsByPosition()
 	{
 		return capturedGroups;
 	}
