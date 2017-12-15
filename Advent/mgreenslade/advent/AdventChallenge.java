@@ -34,9 +34,14 @@ public abstract class AdventChallenge
 			return null;
 		}
 	}
-
+	
 	public String getName()
 	{
 		return name;
+	}
+	
+	public String getSingleLineInput()
+	{
+		return getInputFromFile().findFirst().get();
 	}
 }
